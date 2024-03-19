@@ -9,6 +9,7 @@ import { courses, userProgress } from "@/db/schema"
 // Get user progress
 export const getUserProgress = cache(async () => {
     const { userId } = await auth() // get user id from clerk
+
     if (!userId) {
         return null
     }
