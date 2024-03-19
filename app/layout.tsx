@@ -3,6 +3,8 @@ import { Nunito } from "next/font/google"
 // add ClerkProvider
 import { ClerkProvider } from "@clerk/nextjs"
 
+import { Toaster } from "@/components/ui/sonner"
+
 import "./globals.css"
 
 const font = Nunito({ subsets: ["latin"] })
@@ -17,6 +19,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ClerkProvider>
             <html lang="en">
                 <body className={font.className} suppressHydrationWarning={true}>
+                    {/* Init Toaster */}
+                    <Toaster />
                     {children}
                 </body>
             </html>
