@@ -14,7 +14,7 @@ export const coursesRelations = relations(courses, ({ many }) => ({
 }))
 
 export const userProgress = pgTable("user_progress", {
-    userId: serial("user_id").primaryKey(),
+    userId: text("user_id").primaryKey(), // because auth() returns string
     userName: text("user_name").notNull().default("User"),
     userImageSrc: text("user_image_src").notNull().default("/ic_mascot.svg"),
     activeCourseId: integer("active_course_id").references(() => courses.id, { onDelete: "cascade" }),
