@@ -1,4 +1,5 @@
 This is LingoMaster, the duolingo clone project build using Nextjs, Tailwindcss, Stripe, Drizzle, and more.
+timestamp: 07:15 (seed script)
 
 ## Shadcn UI
 
@@ -11,6 +12,8 @@ This is LingoMaster, the duolingo clone project build using Nextjs, Tailwindcss,
 - and customize the button component based your need
 
 - npx shadcn-ui@latest add sheet (add sheet component) - @radix-ui/react-dialog
+
+- npx shadcn-ui@latest add sooner (add sooner component) - sooner, next-themes
 ```
 
 ## General Packages
@@ -18,6 +21,12 @@ This is LingoMaster, the duolingo clone project build using Nextjs, Tailwindcss,
 -   [x] Nextjs - pnpm create next-app
 -   [x] Tailwindcss - pnpm add tailwindcss postcss autoprefixer
 -   [x] Dotenv - pnpm add dotenv
+-   [x] Tsx - pnpm add -D tsx
+
+```text
+# script package.json
+- "db:seed" : "tsx ./scripts/seed.ts"
+```
 
 ## Clerk Packages
 
@@ -35,6 +44,7 @@ This is LingoMaster, the duolingo clone project build using Nextjs, Tailwindcss,
 -   [pg] - pnpm add -D pg (require for drizzle-kit studio)
 
 ```text
+# script package.json
 - "db:studio": "npx drizzle-kit studio",
 - "db:push" : "npx drizzle-kit push:pg",
 ```
