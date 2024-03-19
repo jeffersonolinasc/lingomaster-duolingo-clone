@@ -7,7 +7,7 @@ type CardProps = {
     id: number
     title: string
     imageSrc: string
-    onClick: () => void
+    onClick: (id: number) => void
     disabled: boolean
     active: boolean
 }
@@ -15,7 +15,7 @@ type CardProps = {
 export const Card = ({ id, title, imageSrc, onClick, disabled, active }: CardProps) => {
     return (
         <button
-            onClick={onClick}
+            onClick={() => onClick(id)} // add onClick function from parent component
             className={cn(
                 "h-full border-2 rounded-xl border-b-4 hover:bg-black/5 cursor-pointer active:border-b-2 flex flex-col items-center justify-between p-3 pb-6 min-h-[217px] min-w-[200px]",
                 disabled && "pointer-events-none opacity-50"
