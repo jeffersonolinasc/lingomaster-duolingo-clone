@@ -1,6 +1,6 @@
 import React from "react"
 
-import { List } from "@/app/(main)/courses/list"
+import { List } from "./list"
 
 import { getAllCourses, getUserProgress } from "@/db/queries"
 
