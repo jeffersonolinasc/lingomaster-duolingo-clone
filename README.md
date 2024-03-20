@@ -22,6 +22,7 @@ timestamp: 07:15 (seed script)
 -   [x] Tailwindcss - pnpm add tailwindcss postcss autoprefixer
 -   [x] Dotenv - pnpm add dotenv
 -   [x] Tsx - pnpm add -D tsx
+-   [x] React-Circular-Progressbar - pnpm add react-circular-progressbar (https://www.npmjs.com/package/react-circular-progressbar)
 
 ```text
 # script package.json
