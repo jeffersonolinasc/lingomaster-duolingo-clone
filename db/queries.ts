@@ -10,9 +10,7 @@ import { challengeProgress, courses, units, userProgress } from "@/db/schema"
 export const getUserProgress = cache(async () => {
     const { userId } = await auth() // get user id from clerk
 
-    if (!userId) {
-        return null
-    }
+    if (!userId) return null
 
     const data = await database.query.userProgress.findFirst({
         where: eq(userProgress.userId, userId),
@@ -29,9 +27,7 @@ export const getUnits = cache(async () => {
     const { userId } = await auth()
     const userProgress = await getUserProgress()
 
-    if (!userId || !userProgress?.activeCourseId) {
-        return []
-    }
+    if (!userId || !userProgress?.activeCourseId) return []
 
     // TODO: Confirm whether order is needed
     const data = await database.query.units.findMany({

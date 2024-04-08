@@ -20,7 +20,9 @@ export const userProgress = pgTable("user_progress", {
     userId: text("user_id").primaryKey(), // because auth() returns string
     userName: text("user_name").notNull().default("User"),
     userImageSrc: text("user_image_src").notNull().default("/ic_mascot.svg"),
-    activeCourseId: integer("active_course_id").references(() => courses.id, { onDelete: "cascade" }),
+    activeCourseId: integer("active_course_id").references(() => courses.id, {
+        onDelete: "cascade",
+    }),
     hearts: integer("hearts").notNull().default(5),
     points: integer("points").notNull().default(0),
 })
