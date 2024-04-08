@@ -1,5 +1,12 @@
 import { Button } from "@/components/ui/button"
-import { ClerkLoaded, ClerkLoading, SignInButton, SignUpButton, SignedIn, SignedOut } from "@clerk/nextjs"
+import {
+    ClerkLoaded,
+    ClerkLoading,
+    SignInButton,
+    SignUpButton,
+    SignedIn,
+    SignedOut,
+} from "@clerk/nextjs"
 import { Loader } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -23,12 +30,18 @@ export default function Home() {
                     <ClerkLoaded>
                         {/* Session when user not auth */}
                         <SignedOut>
-                            <SignUpButton mode="modal" afterSignInUrl="/learn" afterSignUpUrl="/learn">
+                            <SignUpButton
+                                mode="modal"
+                                afterSignInUrl="/learn"
+                                afterSignUpUrl="/learn">
                                 <Button size={"lg"} variant={"secondary"}>
                                     Get Started
                                 </Button>
                             </SignUpButton>
-                            <SignInButton mode="modal" afterSignInUrl="/learn" afterSignUpUrl="/learn">
+                            <SignInButton
+                                mode="modal"
+                                afterSignInUrl="/learn"
+                                afterSignUpUrl="/learn">
                                 <Button size={"lg"} variant={"primaryOutline"}>
                                     I already have an account
                                 </Button>
